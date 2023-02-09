@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
-
+    Route::post('/update-role', [App\Http\Controllers\UserController::class, 'updateRole'])->name('updateRole');
+    Route::post('/delete-role', [App\Http\Controllers\UserController::class, 'deleteUser'])->name('deleteUser');
 });
 
 Auth::routes();
