@@ -7,9 +7,9 @@
                 <div class="card-header">{{ __('Add new Product') }}</div>
 
                 <div class="card-body">
-                    <form action="{{ route('saveProduct') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('saveProduct') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method("post")
+                        @method("GET")
                         <div class="form-group">
                             <label for="image">Image:</label>
                             <div class="custom-file">

@@ -10,7 +10,7 @@
                      <img src="{{ asset('images/' . $product->image) }}" height="180px" alt="Product Image">
                     <form action="{{ route('updateProduct', $product->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
-                        @method('POST')
+                        @method('GET')
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $product->name) }}">

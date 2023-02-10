@@ -31,6 +31,6 @@ Route::get('/products/create', [App\Http\Controllers\ProductController::class, '
 Route::post('/products/create/new', [App\Http\Controllers\ProductController::class, 'store'])->name('saveProduct');
 Route::post('/products/delete', [App\Http\Controllers\ProductController::class, 'deleteProduct'])->name('deleteProduct');
 Route::get('/products/update/{id}', [App\Http\Controllers\ProductController::class, 'selectProduct'])->name('selectProduct');
-Route::POST('/products/update/save-update/{id}', [App\Http\Controllers\ProductController::class, 'selectProduct'])->name('updateProduct');
+Route::GET('/products/update/save-update/{id}', [App\Http\Controllers\ProductController::class, 'updateProduct'])->name('updateProduct');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
