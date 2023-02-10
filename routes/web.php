@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now create.blade.php something great!
 |
 */
 
@@ -24,7 +24,10 @@ Route::middleware(['admin'])->group(function () {
 });
 
 Auth::routes();
-Route::get('/products', [App\Http\Controllers\Product::class, 'index'])->name('products');
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'index'])->name('products');
+
+Route::get('/products/create', [App\Http\Controllers\ProductController::class, 'createProduct'])->name('createProduct');
+Route::post('/products/create/new', [App\Http\Controllers\ProductController::class, 'store'])->name('saveProduct');
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
