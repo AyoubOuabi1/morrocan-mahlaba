@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class product extends Model
+class Product extends Model
 {
     use HasFactory;
-    public string $image;
-    public string $name;
-    public float $price;
-    public string $description;
+    private string $image;
+    private string $name;
+    private float $price;
+    private string $description;
     /**
      * The attributes that are mass assignable.
      *
