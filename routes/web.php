@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,12 @@ Route::get('/products/update/{id}', [App\Http\Controllers\ProductController::cla
 Route::GET('/products/update/save-update/{id}', [App\Http\Controllers\ProductController::class, 'updateProduct'])->name('updateProduct');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// Password Reset Routes...
+Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset');
+Route::post('password/update', 'App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
+

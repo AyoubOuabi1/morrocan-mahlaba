@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form action="{{ route('saveProduct') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method("GET")
+                        @method("POST")
                         <div class="form-group">
                             <label for="image">Image:</label>
                             <div class="custom-file">
