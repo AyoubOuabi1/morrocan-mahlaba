@@ -35,7 +35,9 @@ Route::get('/products/update/{id}', [App\Http\Controllers\ProductController::cla
 Route::GET('/products/update/save-update/{id}', [App\Http\Controllers\ProductController::class, 'updateProduct'])->name('updateProduct');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//user profil update
+Route::get('/profile', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
+Route::post('/profile/update', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
 
 // Password Reset Routes...
 Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
