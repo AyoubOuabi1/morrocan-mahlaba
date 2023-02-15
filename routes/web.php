@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
 Route::middleware(['admin'])->group(function () {
     Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users');
@@ -34,7 +34,6 @@ Route::post('/products/delete', [App\Http\Controllers\ProductController::class, 
 Route::get('/products/update/{id}', [App\Http\Controllers\ProductController::class, 'selectProduct'])->name('selectProduct');
 Route::GET('/products/update/save-update/{id}', [App\Http\Controllers\ProductController::class, 'updateProduct'])->name('updateProduct');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //user profil update
 Route::get('/profile', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
 Route::post('/profile/update', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
